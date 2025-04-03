@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_clinicmario_session,clinicmario.session,model_clinicmario_session,base.group_user,1,1,1,1
+access_clinicmario_technique,clinicmario.technique,model_clinicmario_technique,base.group_user,1,1,1,1
+access_clinicmario_register,clinicmario.register,model_clinicmario_register,base.group_user,1,1,1,1
+access_clinicmario_treatment,clinicmario.treatment,model_clinicmario_treatment,base.group_user,1,1,1,1
+access_clinicmario_client,clinicmario.client,model_clinicmario_client,base.group_user,1,1,1,1
+access_clinicmario_professional,clinicmario.professional,model_clinicmario_professional,base.group_user,1,1,1,1

@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicmario_register">
+            <field name="name">Árbol de Registros</field>
+            <field name="model">clinicmario.register</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="client" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicmario_register">
+            <field name="name">Formulario de Registros</field>
+            <field name="model">clinicmario.register</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="client" />
+                            <field name="treatments"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicmario_registers">
+            <field name="name">Registros</field>
+            <field name="res_model">clinicmario.register</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    
+    <menuitem name="Registros" id="clinicmario_menu_register" parent="menu_clinicmario_administracion"
+        action="action_clinicmario_registers"/>
+
+    </data>
+</odoo>

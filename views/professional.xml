@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicmario_professional">
+            <field name="name">Árbol de Profesionales</field>
+            <field name="model">clinicmario.professional</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="surnames" />
+                    <field name="proftype" />
+                    <field name="email" />
+                    <field name="phone" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicmario_professional">
+            <field name="name">Formulario de Profesionales</field>
+            <field name="model">clinicmario.professional</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <group>
+                        <field name="id" />
+                        <field name="name" />
+                        <field name="surnames" />
+                        <field name="proftype" />
+                        <field name="email" />
+                        <field name="treatments" />
+                        <field name="phone" />
+                    </group>
+                    <notebook>
+                        <page string="Sesiones">
+                            <field name="sessions" readonly="1">
+                                <tree>
+                                    <field name="name" />
+                                    <field name="date" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicmario_professionals">
+            <field name="name">Profesionales</field>
+            <field name="res_model">clinicmario.professional</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    
+    <menuitem name="Profesionales" id="clinicmario_menu_professional" parent="menu_clinicmario_administracion"
+        action="action_clinicmario_professionals"/>
+
+    </data>
+</odoo>

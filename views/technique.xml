@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicmario_technique">
+            <field name="name">Árbol de Técnicas</field>
+            <field name="model">clinicmario.technique</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicmario_technique">
+            <field name="name">Formulario de Técnicas</field>
+            <field name="model">clinicmario.technique</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="sessions"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicmario_techniques">
+            <field name="name">Técnicas</field>
+            <field name="res_model">clinicmario.technique</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem name="Técnicas" id="clinicmario_menu_technique" parent="menu_clinicmario_administracion"
+        action="action_clinicmario_techniques"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tree_clinicmario_session">
+            <field name="name">Árbol de Sesiones</field>
+            <field name="model">clinicmario.session</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="date" />
+                    <field name="treatment" />
+                    <field name="professional" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="form_clinicmario_session">
+            <field name="name">Formulario de Sesiones</field>
+            <field name="model">clinicmario.session</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="date" />
+                            <field name="treatment" />
+                            <field name="techniques" />
+                            <field name="professional" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_session_calendar" model="ir.ui.view">
+            <field name="name">Calendario de Sesiones</field>
+            <field name="model">clinicmario.session</field>
+            <field name="arch" type="xml">
+                <calendar string="Calendario de Sesiones" date_start="date"
+                    date_stop="date">
+                    <field name="name" />
+                    <field name="date" />
+                </calendar>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="action_clinicmario_sessions">
+            <field name="name">Sesiones</field>
+            <field name="res_model">clinicmario.session</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+    <menuitem name="Sesiones" id="clinicmario_menu_session" parent="menu_clinicmario_administracion"
+        action="action_clinicmario_sessions"/>
+    
+    </data>
+    
+</odoo>
