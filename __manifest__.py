@@ -31,6 +31,7 @@ Long description of module's purpose
         'views/session.xml',
         'views/technique.xml',
         'views/treatment.xml',
+        'views/senior_professional.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

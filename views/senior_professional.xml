@@ -1,24 +1,25 @@
 <odoo>
     <data>
-        <!-- Vista Tree (Lista) para Profesionales -->
-        <record model="ir.ui.view" id="tree_clinicmario_professional">
-            <field name="name">Árbol de Profesionales</field>
-            <field name="model">clinicmario.professional</field>
+        <!-- Vista Tree (Lista) para Profesionales Senior -->
+        <record model="ir.ui.view" id="tree_clinicmario_senior_professional">
+            <field name="name">Árbol de Profesionales Senior</field>
+            <field name="model">clinicmario.professional</field>  <!-- Usar el modelo base -->
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" />
                     <field name="surnames" />
                     <field name="proftype" />
+                    <field name="years_experience" />
                     <field name="email" />
                     <field name="phone" />
                 </tree>
             </field>
         </record>
 
-        <!-- Vista Form (Formulario) para Profesionales -->
-        <record model="ir.ui.view" id="form_clinicmario_professional">
-            <field name="name">Formulario de Profesionales</field>
-            <field name="model">clinicmario.professional</field>
+        <!-- Vista Form (Formulario) para Profesionales Senior -->
+        <record model="ir.ui.view" id="form_clinicmario_senior_professional">
+            <field name="name">Formulario de Profesionales Senior</field>
+            <field name="model">clinicmario.professional</field>  <!-- Usar el modelo base -->
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -36,29 +37,24 @@
                                 <field name="years_experience" />
                             </group>
                         </group>
-                        <notebook>
-                            <page string="Tratamientos">
-                                <field name="treatments" />
-                            </page>
-                        </notebook>
                     </sheet>
                 </form>
             </field>
         </record>
 
-        <!-- Acción para abrir la vista de Profesionales -->
-        <record id="action_clinicmario_professionals" model="ir.actions.act_window">
-            <field name="name">Profesionales</field>
-            <field name="res_model">clinicmario.professional</field>
+        <record id="action_clinicmario_senior_professionals" model="ir.actions.act_window">
+            <field name="name">Profesionales Senior</field>
+            <field name="res_model">clinicmario.professional</field>  <!-- Usar el modelo base -->
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('years_experience', '>', 5)]</field>  <!-- Dominio para filtrar por años de experiencia -->
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Crea tu primer profesional
+                    Crea tu primer profesional senior
                 </p>
             </field>
         </record>
 
-        <!-- Menú para Profesionales -->
-        <menuitem name="Profesionales" id="menu_clinicmario_professionals" action="action_clinicmario_professionals" parent="menu_clinicmario_administracion"/>
+        <!-- Menú para Profesionales Senior -->
+        <menuitem name="Seniors" id="menu_clinicmario_seniors" action="action_clinicmario_senior_professionals" parent="menu_clinicmario_administracion"/>
     </data>
 </odoo>

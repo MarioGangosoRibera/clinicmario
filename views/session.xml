@@ -46,8 +46,6 @@
             </field>
         </record>
 
-        <!-- actions opening views on models -->
-
         <record model="ir.actions.act_window" id="action_clinicmario_sessions">
             <field name="name">Sesiones</field>
             <field name="res_model">clinicmario.session</field>

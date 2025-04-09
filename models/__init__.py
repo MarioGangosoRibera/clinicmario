@@ -7,3 +7,4 @@ from . import register
 from . import session
 from . import technique
 from . import treatment
+from . import seniorProfessional
